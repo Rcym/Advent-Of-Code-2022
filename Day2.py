@@ -7,30 +7,48 @@ TotalScore = 0
 for line in input:
     match line[0]:
         case "A":
-            playyed = "A"
+            playyed = "A"  # Rock > Scissors 3
         case "B":
-            playyed = "B"
+            playyed = "B"  # Paper > Rock 1
         case "C":
-            playyed = "C"
+            playyed = "C"  # Scissors > Paper 2
 
     match line[2]:
         case "X":
-            TotalScore += 1
-            if playyed == "A": # respond rock to rock
-                TotalScore += 3
-            elif playyed == "C": # respond rock to cissors
-                TotalScore += 6
-        case "Y":
-            TotalScore += 2
-            if playyed == "B":
-                TotalScore += 3
-            elif playyed == "A":
-                TotalScore += 6
-        case "Z":
-            TotalScore += 3
-            if playyed == "C":
+            if playyed == "A":
+                # need to play scissors 3
                 TotalScore += 3
             elif playyed == "B":
-                TotalScore += 6
+                # need to play rock 1
+                TotalScore += 1
+            elif playyed == "C":
+                # need to play paper 2
+                TotalScore += 2
+        case "Y":
+            # draw => +3
+            TotalScore += 3
+
+            if playyed == "A":
+                # need to play rock 1
+                TotalScore += 1
+            elif playyed == "B":
+                # need to play paper 2
+                TotalScore += 2
+            elif playyed == "C":
+                # need to play scissors 3
+                TotalScore += 3
+        case "Z":
+            # win => +6
+            TotalScore += 6
+            
+            if playyed == "A":
+                # need to play paper 2
+                TotalScore += 2
+            elif playyed == "B":
+                # need to play scissors 3
+                TotalScore += 3
+            elif playyed == "C":
+                # need to play rock 1
+                TotalScore += 1
 
 print(TotalScore)
