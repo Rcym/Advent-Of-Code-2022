@@ -7,7 +7,7 @@ TotalScore = 0
 for line in input:
     match line[0]:
         case "A":
-            playyed = "A"  # Rock > Scissors 3
+            playyed = "A"
         case "B":
             playyed = "B"  # Paper > Rock 1
         case "C":

@@ -22,7 +22,6 @@ for line in input:
         total += int(line)
 
 
-
 print(maxValue1)
 print(maxValue2)
 print(maxValue3)
